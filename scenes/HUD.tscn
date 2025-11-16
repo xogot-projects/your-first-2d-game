@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://xqxpkrclfrl2"]
+
+[ext_resource type="FontFile" uid="uid://c40eugnug7p4e" path="res://fonts/Xolonium-Regular.ttf" id="1"]
+[ext_resource type="Script" uid="uid://cyvyliirvtk3q" path="res://scripts/HUD.gd" id="2"]
+
+[sub_resource type="Shortcut" id="3"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("2")
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -16.0
+offset_right = 16.0
+offset_bottom = 57.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1")
+theme_override_font_sizes/font_size = 64
+text = "0"
+horizontal_alignment = 1
+
+[node name="Message" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.5
+offset_top = -89.0
+offset_right = 190.5
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1")
+theme_override_font_sizes/font_size = 64
+text = "Save the Axolotl!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="StartButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -94.0
+offset_top = -122.0
+offset_right = 99.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1")
+theme_override_font_sizes/font_size = 64
+shortcut = SubResource("3")
+text = "Start"
+
+[node name="MessageTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="timeout" from="MessageTimer" to="." method="_on_MessageTimer_timeout"]
