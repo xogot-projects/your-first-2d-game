@@ -63,11 +63,10 @@ This project is intended for beginners or anyone who wants a guided introduction
 
 ## Project structure (high level)
 
-- assets/ — sprites, audio, and other media used by the project
+- art/ — sprites, audio, and other media used by the project
+- fonts/ - Fonts used in the ui HUD
 - scenes/ — Godot scenes (player, enemy, main, UI)
 - scripts/ — GDScript files implementing game logic
-- ui/ — UI elements (score display, menus)
-- project.godot or project.godot4 — Godot project file
 
 Open these folders in the editor to explore how the tutorial organizes scenes and code.
 
